@@ -12,14 +12,11 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/posts")
 public class PostController {
-
     private PostService postService;
-
     public PostController(PostService postService) {
         this.postService = postService;
     }
-
-    // create blog post
+    // create blog post rest api
     @PostMapping
     public ResponseEntity<PostDto> createPost(@RequestBody PostDto postDto){
         return new ResponseEntity<>(postService.createPost(postDto), HttpStatus.CREATED);
@@ -30,6 +27,12 @@ public class PostController {
     @GetMapping
     public List<PostDto> getAllPosts(){
         return postService.getAllPosts();
+    }
+
+    // get post by id
+    @GetMapping("/{id}")
+    public ResponseEntity<PostDto> getPostById(@PathVariable(name = "id") long id) {
+        return ResponseEntity.ok(postService.getPostById(id));
     }
 
 
