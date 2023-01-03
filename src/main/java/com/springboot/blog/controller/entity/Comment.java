@@ -14,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "comments")
 public class Comment {
 
+    public String getEmail;
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
 
