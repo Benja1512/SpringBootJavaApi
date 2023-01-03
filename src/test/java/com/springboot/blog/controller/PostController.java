@@ -1,7 +1,7 @@
 package com.springboot.blog.controller;
 
 import com.springboot.blog.payload.PostDto;
-import com.springboot.blog.service.impl.PostService;
+import com.springboot.blog.service.PostService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
